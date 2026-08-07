@@ -1,0 +1,40 @@
+:root {
+  --bg-base: #f8fafc;
+  --bg-white: #ffffff;
+  --blue-500: #0077b6;
+  --blue-600: #005b8f;
+  --blue-900: #003657;
+  --sky-400: #38bdf8;
+  --ink-900: #0f172a;
+  --slate-600: #475569;
+  --slate-500: #64748b;
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-base);
+  color: var(--ink-900);
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-space), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.mono {
+  font-family: var(--font-mono), monospace;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+

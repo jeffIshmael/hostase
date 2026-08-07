@@ -1,0 +1,116 @@
+import styles from "./page.module.css";
+import TabsSection from "./TabsSection";
+import Header from "./Header";
+
+export default function Home() {
+  return (
+    <>
+      <Header />
+      <main className={styles.main}>
+        <section className={styles.hero}>
+          <div className={styles.mesh}></div>
+          <div className={styles.heroInner}>
+            <div className={styles.eyebrow}>
+              <span className={styles.dot}></span> Now live for Malawi checkout
+            </div>
+            <h1 className={styles.title}>
+              Hostinger payments,<br />
+              <span className={styles.accent}>simplified.</span>
+            </h1>
+            <p className={styles.description}>
+              Paying for hosting on Hostinger using Malawian Kwacha (Mobile Money).
+            </p>
+            <div className={styles.heroCtas}>
+              <a href="#tabs" className={styles.btn}>
+                Install for Chrome / Brave
+              </a>
+              <a href="#flow" className={`${styles.btn} ${styles.btnGhost}`}>
+                See how it works
+              </a>
+            </div>
+
+            <div className={styles.mockup}>
+              <div className={styles.mockupHeader}>
+                <div className={styles.mockupMerchant}>
+                  <span className={styles.mockupMerchantIcon}>H</span>
+                  <div className={styles.mockupMerchantText}>
+                    <span className={styles.mockupMerchantName}>Hostinger</span>
+                    <span className={styles.mockupOrderId}>Order #HS-88213</span>
+                  </div>
+                </div>
+                <span className={styles.mockupBadge}>Pending</span>
+              </div>
+
+              <div className={styles.mockupDivider}></div>
+
+              <div className={styles.mockupLineItems}>
+                <div className={styles.mockupLineItem}>
+                  <span>Premium Web Hosting (12mo)</span>
+                  <span>12.50 USDC</span>
+                </div>
+                <div className={styles.mockupLineItem}>
+                  <span>Network fee</span>
+                  <span>--- USDC</span>
+                </div>
+              </div>
+
+              <div className={styles.mockupDivider}></div>
+
+              <div className={styles.mockupTotalRow}>
+                <div className={styles.mockupTotalLeft}>
+                  <span className={styles.mockupTotalLabel}>You pay</span>
+                  {/* <span className={styles.mockupRate}>1 USDC ≈ MWK 5,258</span> */}
+                </div>
+                <span className={styles.mockupTotalValue}>66,000 MWK</span>
+              </div>
+
+              <button className={styles.mockupCta}>Confirm with Mobile Money</button>
+
+              <div className={styles.mockupStatus}>
+                <span className={styles.pulse}></span> Converting in real time
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.flow} id="flow">
+          <div className={styles.flowHead}>
+            <h2>Three steps. One checkout.</h2>
+            <p>The extension sits on Hostinger's payment page and handles the whole conversion path for you.</p>
+          </div>
+          <div className={styles.flowTrack}>
+            <div className={styles.flowNode}>
+              <div className={styles.flowBadge}><span>📱</span></div>
+              <span className={`${styles.flowLabel} mono`}>01 · DEPOSIT</span>
+              <h3>Easy onramp</h3>
+              <p>Enter your phone number and choose how much to spend, right on the checkout page.</p>
+            </div>
+            <div className={styles.flowNode}>
+              <div className={styles.flowBadge}><span>⚡</span></div>
+              <span className={`${styles.flowLabel} mono`}>02 · CONVERT</span>
+              <h3>Instant payments</h3>
+              <p>Your payment converts to MWK at the live rate in seconds — no separate exchange step.</p>
+            </div>
+            <div className={styles.flowNode}>
+              <div className={styles.flowBadge}><span>💸</span></div>
+              <span className={`${styles.flowLabel} mono`}>03 · PAY</span>
+              <h3>Low fees</h3>
+              <p>Confirm with Mobile Money and Hostinger gets paid — a fraction of typical card or wire fees.</p>
+            </div>
+          </div>
+        </section>
+
+        <TabsSection />
+
+        <footer className={styles.footer}>
+          <div className={styles.footerLinks}>
+            <a href="#">Docs</a>
+            <a href="#">Support</a>
+            <a href="#">GitHub</a>
+          </div>
+          <div className={styles.footerCopy}>© {new Date().getFullYear()} Hostase. Not affiliated with Hostinger.</div>
+        </footer>
+      </main>
+    </>
+  );
+}

@@ -81,21 +81,21 @@ export default function Home() {
           <div className={styles.flowTrack}>
             <div className={styles.flowNode}>
               <div className={styles.flowBadge}><span>📱</span></div>
-              <span className={`${styles.flowLabel} mono`}>01 · DEPOSIT</span>
-              <h3>Easy onramp</h3>
-              <p>Enter your phone number and choose how much to spend, right on the checkout page.</p>
+              <span className={`${styles.flowLabel} mono`}>01 · SETUP</span>
+              <h3>One-time KYC</h3>
+              <p>Register your details and Mobile Money phone number securely in the extension just once.</p>
             </div>
             <div className={styles.flowNode}>
-              <div className={styles.flowBadge}><span>⚡</span></div>
-              <span className={`${styles.flowLabel} mono`}>02 · CONVERT</span>
-              <h3>Instant payments</h3>
-              <p>Your payment converts to MWK at the live rate in seconds — no separate exchange step.</p>
+              <div className={styles.flowBadge}><span>🛒</span></div>
+              <span className={`${styles.flowLabel} mono`}>02 · CHECKOUT</span>
+              <h3>Get payment details</h3>
+              <p>Choose CoinGate at Hostinger checkout and copy the exact USDC amount and wallet address.</p>
             </div>
             <div className={styles.flowNode}>
               <div className={styles.flowBadge}><span>💸</span></div>
               <span className={`${styles.flowLabel} mono`}>03 · PAY</span>
-              <h3>Low fees</h3>
-              <p>Confirm with Mobile Money and Hostinger gets paid — a fraction of typical card or wire fees.</p>
+              <h3>Pay with Mobile Money</h3>
+              <p>Paste the details into the extension to instantly convert and confirm the payment on your phone.</p>
             </div>
           </div>
         </section>

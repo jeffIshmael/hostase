@@ -64,8 +64,8 @@ export default function TabsSection() {
         <div className={styles.steps}>
           <div className={styles.step}>
             <div className={`${styles.stepNum} mono`}>1</div>
-            <h4>Download the extension</h4>
-            <p>Grab the latest build from the release page.</p>
+            <h4>Download the Extension</h4>
+            <p>Download the zipped package, then <strong>unzip/extract</strong> it to a folder on your computer.</p>
             <a href="/hostase-extension.zip" download className={styles.downloadBtn}>
               <Download size={16} />
               <span>Download .zip Folder</span>

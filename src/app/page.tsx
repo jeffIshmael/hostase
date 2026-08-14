@@ -28,6 +28,9 @@ export default function Home() {
                 See how it works
               </a>
             </div>
+            <p className={styles.unzipNote}>
+              ⚠️ <strong>Note:</strong> You must <strong>unzip/extract</strong> the downloaded file before loading it into Chrome!
+            </p>
 
             <div className={styles.mockup}>
               <div className={styles.mockupHeader}>

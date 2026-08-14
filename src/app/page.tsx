@@ -83,19 +83,19 @@ export default function Home() {
               <div className={styles.flowBadge}><span>📱</span></div>
               <span className={`${styles.flowLabel} mono`}>01 · SETUP</span>
               <h3>One-time KYC</h3>
-              <p>Register your details and Mobile Money phone number securely in the extension just once.</p>
+              <p>Register your details and Mobile Money network securely in the extension just once.</p>
             </div>
             <div className={styles.flowNode}>
               <div className={styles.flowBadge}><span>🛒</span></div>
               <span className={`${styles.flowLabel} mono`}>02 · CHECKOUT</span>
-              <h3>Get payment details</h3>
-              <p>Choose CoinGate at Hostinger checkout and copy the exact USDC amount and wallet address.</p>
+              <h3>Auto-Detection</h3>
+              <p>Choose CoinGate at Hostinger checkout. The extension automatically detects the exact USDC amount and wallet address.</p>
             </div>
             <div className={styles.flowNode}>
               <div className={styles.flowBadge}><span>💸</span></div>
               <span className={`${styles.flowLabel} mono`}>03 · PAY</span>
               <h3>Pay with Mobile Money</h3>
-              <p>Paste the details into the extension to instantly convert and confirm the payment on your phone.</p>
+              <p>Open the extension and click pay. You'll receive a prompt on your phone to instantly confirm the payment.</p>
             </div>
           </div>
         </section>

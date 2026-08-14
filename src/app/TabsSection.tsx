@@ -102,9 +102,27 @@ export default function TabsSection() {
             <div className={`${styles.stepNum} mono`}>5</div>
             <h4>Pin it</h4>
             <p>Pin the extension so it's one click away on checkout.</p>
-            <div className={styles.frame}>
+             <div className={styles.frame}>
               <div className={styles.frameBar}><span></span><span></span><span></span></div>
-              <div className={styles.frameBody}>Screenshot: pinned toolbar icon</div>
+              <img src="/images/pin.png" alt="Load unpacked dialog" className={styles.frameImage} />
+            </div>
+          </div>
+           <div className={styles.step}>
+            <div className={`${styles.stepNum} mono`}>5</div>
+            <h4>Sign in</h4>
+            <p>Open the extention and sign in with your email.</p>
+             <div className={styles.frame}>
+              <div className={styles.frameBar}><span></span><span></span><span></span></div>
+              <img src="/images/signin.png" alt="Get started" className={styles.frameImage} />
+            </div>
+          </div>
+           <div className={styles.step}>
+            <div className={`${styles.stepNum} mono`}>5</div>
+            <h4>Complete profile details.</h4>
+            <p>Complete your profile details.</p>
+             <div className={styles.frame}>
+              <div className={styles.frameBar}><span></span><span></span><span></span></div>
+              <img src="/images/details.png" alt="Complete profle details" className={styles.frameImage} />
             </div>
           </div>
         </div>
@@ -138,7 +156,7 @@ export default function TabsSection() {
           <div className={styles.step}>
             <div className={`${styles.stepNum} mono`}>4</div>
             <h4>Copy Payment Details</h4>
-            <p>A final screen will show your invoice. Copy the exact <strong>USDC amount</strong> and the <strong>address</strong> provided.</p>
+            <p>A final screen will show your invoice. Copy the <strong>address</strong> provided.</p>
             <div className={styles.frame}>
               <div className={styles.frameBar}><span></span><span></span><span></span></div>
               <img src="/images/checkout.png" alt="Checkout details" className={styles.frameImage} />
@@ -147,7 +165,11 @@ export default function TabsSection() {
           <div className={styles.step}>
             <div className={`${styles.stepNum} mono`}>5</div>
             <h4>Pay with Hostase</h4>
-            <p>Open the Hostase extension and paste the USDC amount and address. We'll automatically calculate the cost in MWK. Enter your phone number and click <strong>Make Payment</strong>!</p>
+            <p>Open the Hostase extension and paste the copied address. We'll automatically calculate the cost in MWK. Confirm details and <strong>Make Payment</strong>.</p>
+             <div className={styles.frame}>
+              <div className={styles.frameBar}><span></span><span></span><span></span></div>
+              <img src="/images/address.png" alt="Checkout details" className={styles.frameImage} />
+            </div>
           </div>
         </div>
       </div>

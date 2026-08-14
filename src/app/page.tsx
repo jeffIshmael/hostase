@@ -21,7 +21,7 @@ export default function Home() {
               Paying for hosting on Hostinger using Malawian Kwacha (Mobile Money).
             </p>
             <div className={styles.heroCtas}>
-              <a href="#tabs" className={styles.btn}>
+              <a href="/hostase-extension.zip" download className={styles.btn}>
                 Install for Chrome / Brave
               </a>
               <a href="#flow" className={`${styles.btn} ${styles.btnGhost}`}>
@@ -46,11 +46,11 @@ export default function Home() {
               <div className={styles.mockupLineItems}>
                 <div className={styles.mockupLineItem}>
                   <span>Domain Purchase</span>
-                  <span className={styles.mockupLineItemValue}>16,500 MWK</span>
+                  <span className={styles.mockupLineItemValue}>86,500 MWK</span>
                 </div>
                 <div className={styles.mockupLineItem}>
                   <span>Network Fee</span>
-                  <span className={styles.mockupLineItemValue}>132 MWK</span>
+                  <span className={styles.mockupLineItemValue}>4650 MWK</span>
                 </div>
               </div>
 
@@ -60,7 +60,7 @@ export default function Home() {
                 <div className={styles.mockupTotalLeft}>
                   <span className={styles.mockupTotalLabel}>Total MWK</span>
                 </div>
-                <span className={styles.mockupTotalValue}>16,632 MWK</span>
+                <span className={styles.mockupTotalValue}>91,150 MWK</span>
               </div>
 
               <div className={styles.mockupDivider} style={{ borderStyle: 'dashed' }}></div>
@@ -72,11 +72,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <button className={styles.mockupCta}>Pay 16,632 MWK</button>
-
-              <div className={styles.mockupStatus}>
-                <span className={styles.pulse}></span> Converting in real time
-              </div>
+              <button className={styles.mockupCta}>Pay 91,150 MWK</button>
             </div>
           </div>
         </section>
@@ -111,11 +107,6 @@ export default function Home() {
         <TabsSection />
 
         <footer className={styles.footer}>
-          <div className={styles.footerLinks}>
-            <a href="#">Docs</a>
-            <a href="#">Support</a>
-            <a href="#">GitHub</a>
-          </div>
           <div className={styles.footerCopy}>© {new Date().getFullYear()} Hostase. Not affiliated with Hostinger.</div>
         </footer>
       </main>

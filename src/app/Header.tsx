@@ -22,7 +22,7 @@ export default function Header() {
         <Image src="/images/logo.png" alt="Hostase Logo" width={32} height={32} style={{borderRadius: '8px'}} />
         <span style={{marginLeft: '12px'}}>Hostase</span>
       </div>
-      <a href="#tabs" className={pageStyles.btn}>
+      <a href="/hostase-extension.zip" download className={pageStyles.btn}>
         Get Extension
       </a>
     </header>

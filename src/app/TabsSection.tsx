@@ -152,7 +152,7 @@ export default function TabsSection() {
             <h4>Select Currency and Network</h4>
             <p>Click <strong>Select currency</strong> and choose currency <strong>USDC</strong> and network <strong>Base</strong>.</p>
             <p style={{ color: '#b45309', background: '#fef3c7', padding: '8px 12px', borderRadius: '8px', border: '1px solid #fde68a', fontSize: '0.85rem', marginTop: '8px', display: 'inline-block' }}>
-              ⚠️ <strong>Important:</strong> You must select <strong>USDC</strong> as the currency and <strong>Base</strong> as the network for the payment to work!
+              ⚠️ <strong>Important:</strong> Make sure you select <strong>USDC</strong> as the currency and <strong>Base</strong> as the network!
             </p>
             <div className={styles.frame}>
               <div className={styles.frameBar}><span></span><span></span><span></span></div>

@@ -223,6 +223,11 @@
   color: var(--slate-600);
 }
 
+.mockupLineItemValue {
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
 .mockupTotalRow {
   display: flex;
   justify-content: space-between;

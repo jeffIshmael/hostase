@@ -45,12 +45,12 @@ export default function Home() {
 
               <div className={styles.mockupLineItems}>
                 <div className={styles.mockupLineItem}>
-                  <span>Premium Web Hosting (12mo)</span>
-                  <span>12.50 USDC</span>
+                  <span>Domain Purchase</span>
+                  <span className={styles.mockupLineItemValue}>16,500 MWK</span>
                 </div>
                 <div className={styles.mockupLineItem}>
-                  <span>Network fee</span>
-                  <span>--- USDC</span>
+                  <span>Network Fee</span>
+                  <span className={styles.mockupLineItemValue}>132 MWK</span>
                 </div>
               </div>
 
@@ -58,13 +58,21 @@ export default function Home() {
 
               <div className={styles.mockupTotalRow}>
                 <div className={styles.mockupTotalLeft}>
-                  <span className={styles.mockupTotalLabel}>You pay</span>
-                  {/* <span className={styles.mockupRate}>1 USDC ≈ MWK 5,258</span> */}
+                  <span className={styles.mockupTotalLabel}>Total MWK</span>
                 </div>
-                <span className={styles.mockupTotalValue}>66,000 MWK</span>
+                <span className={styles.mockupTotalValue}>16,632 MWK</span>
               </div>
 
-              <button className={styles.mockupCta}>Confirm with Mobile Money</button>
+              <div className={styles.mockupDivider} style={{ borderStyle: 'dashed' }}></div>
+
+              <div className={styles.mockupLineItems} style={{ marginBottom: '16px' }}>
+                <div className={styles.mockupLineItem}>
+                  <span>Mobile Money No.</span>
+                  <span className={styles.mockupLineItemValue}>+265 99 123 4567</span>
+                </div>
+              </div>
+
+              <button className={styles.mockupCta}>Pay 16,632 MWK</button>
 
               <div className={styles.mockupStatus}>
                 <span className={styles.pulse}></span> Converting in real time

@@ -64,8 +64,8 @@ export default function TabsSection() {
         <div className={styles.steps}>
           <div className={styles.step}>
             <div className={`${styles.stepNum} mono`}>1</div>
-            <h4>Download the Extension</h4>
-            <p>Download the zipped package, then <strong>unzip/extract</strong> it to a folder on your computer.</p>
+            <h4>Download the extension</h4>
+            <p>Grab the latest build from the release page.</p>
             <a href="/hostase-extension.zip" download className={styles.downloadBtn}>
               <Download size={16} />
               <span>Download .zip Folder</span>
@@ -92,7 +92,10 @@ export default function TabsSection() {
           <div className={styles.step}>
             <div className={`${styles.stepNum} mono`}>4</div>
             <h4>Load Unpacked</h4>
-            <p>Click the <strong>Load unpacked</strong> button and select the unzipped folder that you downloaded.</p>
+            <p>Click the <strong>Load unpacked</strong> button and select the folder.</p>
+            <p style={{ color: '#b45309', background: '#fef3c7', padding: '8px 12px', borderRadius: '8px', border: '1px solid #fde68a', fontSize: '0.85rem', marginTop: '8px', display: 'inline-block' }}>
+              ⚠️ <strong>Note:</strong> You must <strong>unzip/extract</strong> the downloaded .zip file before loading it!
+            </p>
             <div className={styles.frame}>
               <div className={styles.frameBar}><span></span><span></span><span></span></div>
               <img src="/images/unpack.png" alt="Load unpacked dialog" className={styles.frameImage} />

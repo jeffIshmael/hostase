@@ -21,16 +21,13 @@ export default function Home() {
               Paying for hosting on Hostinger using Malawian Kwacha (Mobile Money).
             </p>
             <div className={styles.heroCtas}>
-              <a href="/hostase-extension.zip" download className={styles.btn}>
+              <a href="#tabs" className={styles.btn}>
                 Install for Chrome / Brave
               </a>
               <a href="#flow" className={`${styles.btn} ${styles.btnGhost}`}>
                 See how it works
               </a>
             </div>
-            <p className={styles.unzipNote}>
-              ⚠️ <strong>Note:</strong> You must <strong>unzip/extract</strong> the downloaded file before loading it into Chrome!
-            </p>
 
             <div className={styles.mockup}>
               <div className={styles.mockupHeader}>
@@ -96,13 +93,13 @@ export default function Home() {
               <div className={styles.flowBadge}><span>🛒</span></div>
               <span className={`${styles.flowLabel} mono`}>02 · CHECKOUT</span>
               <h3>Auto-Detection</h3>
-              <p>Choose CoinGate at Hostinger checkout. The extension automatically detects the exact USDC amount and wallet address.</p>
+              <p>Choose CoinGate at Hostinger checkout. The extension automatically detects the exact amount, just copy the address given.</p>
             </div>
             <div className={styles.flowNode}>
               <div className={styles.flowBadge}><span>💸</span></div>
               <span className={`${styles.flowLabel} mono`}>03 · PAY</span>
               <h3>Pay with Mobile Money</h3>
-              <p>Open the extension and click pay. You'll receive a prompt on your phone to instantly confirm the payment.</p>
+              <p>Open the extension, paste the address and click pay. You'll receive a prompt on your phone to instantly confirm the payment.</p>
             </div>
           </div>
         </section>

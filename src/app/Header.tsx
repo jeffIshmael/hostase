@@ -22,9 +22,14 @@ export default function Header() {
         <Image src="/images/logo.png" alt="Hostase Logo" width={32} height={32} style={{borderRadius: '8px'}} />
         <span style={{marginLeft: '12px'}}>Hostase</span>
       </div>
-      <a href="#tabs" className={pageStyles.btn}>
-        Get Extension
-      </a>
+      <div style={{display: 'flex', gap: '16px', alignItems: 'center'}}>
+        <a href="https://chat.whatsapp.com/GlwYBVPWkRE1VG84SVtjrS?mode=gi_t" target="_blank" rel="noopener noreferrer" style={{color: 'var(--slate-600)', fontSize: '14px', textDecoration: 'none', fontWeight: 500}}>
+          Contact us on WhatsApp
+        </a>
+        <a href="#tabs" className={pageStyles.btn}>
+          Get Extension
+        </a>
+      </div>
     </header>
   );
 }

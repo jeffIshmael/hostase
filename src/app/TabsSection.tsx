@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@vercel/analytics";
+import { sendGAEvent } from "@next/third-parties/google";
 import { Download, Copy, Check } from "lucide-react";
 import styles from "./page.module.css";
 
@@ -66,7 +68,15 @@ export default function TabsSection() {
             <div className={`${styles.stepNum} mono`}>1</div>
             <h4>Download the extension</h4>
             <p>Grab the latest build from the release page.</p>
-            <a href="/hostase-extension.zip" download className={styles.downloadBtn}>
+            <a 
+              href="/hostase-extension.zip" 
+              download 
+              className={styles.downloadBtn}
+              onClick={() => {
+                track("download_extension");
+                sendGAEvent({ event: "download_extension", value: "hostase-extension.zip" });
+              }}
+            >
               <Download size={16} />
               <span>Download .zip Folder</span>
             </a>
@@ -92,7 +102,7 @@ export default function TabsSection() {
           <div className={styles.step}>
             <div className={`${styles.stepNum} mono`}>4</div>
             <h4>Load Unpacked</h4>
-            <p>Click the <strong>Load unpacked</strong> button and select the folder.</p>
+            <p>Click the <strong>Load unpacked</strong> button and select the <strong>extension</strong> folder (if it extracted as <code>hostase-extension/extension</code>, make sure to select the inner <code>extension</code> folder).</p>
             <p style={{ color: '#b45309', background: '#fef3c7', padding: '8px 12px', borderRadius: '8px', border: '1px solid #fde68a', fontSize: '0.85rem', marginTop: '8px', display: 'inline-block' }}>
               ⚠️ <strong>Note:</strong> You must <strong>unzip/extract</strong> the downloaded .zip file before loading it!
             </p>

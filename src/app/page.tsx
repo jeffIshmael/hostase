@@ -18,7 +18,7 @@ export default function Home() {
               <span className={styles.accent}>simplified.</span>
             </h1>
             <p className={styles.description}>
-              Paying for hosting on Hostinger using Malawian Kwacha (Mobile Money).
+              Hosting purchase on Hostinger using Malawian Kwacha (Mobile Money).
             </p>
             <div className={styles.heroCtas}>
               <a href="#tabs" className={styles.btn}>
@@ -46,7 +46,7 @@ export default function Home() {
               <div className={styles.mockupLineItems}>
                 <div className={styles.mockupLineItem}>
                   <span>Domain Purchase</span>
-                  <span className={styles.mockupLineItemValue}>86,500 MWK</span>
+                  <span className={styles.mockupLineItemValue}>14,647 MWK</span>
                 </div>
                 <div className={styles.mockupLineItem}>
                   <span>Network Fee</span>
@@ -60,7 +60,7 @@ export default function Home() {
                 <div className={styles.mockupTotalLeft}>
                   <span className={styles.mockupTotalLabel}>Total MWK</span>
                 </div>
-                <span className={styles.mockupTotalValue}>91,150 MWK</span>
+                <span className={styles.mockupTotalValue}>19,297 MWK</span>
               </div>
 
               <div className={styles.mockupDivider} style={{ borderStyle: 'dashed' }}></div>
@@ -72,7 +72,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <button className={styles.mockupCta}>Pay 91,150 MWK</button>
+              <button className={styles.mockupCta}>Pay 19,297 MWK</button>
             </div>
           </div>
         </section>

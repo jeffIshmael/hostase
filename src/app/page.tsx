@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import TabsSection from "./TabsSection";
 import Header from "./Header";
+import HeroMockup from "./HeroMockup";
 
 export default function Home() {
   return (
@@ -11,14 +12,14 @@ export default function Home() {
           <div className={styles.mesh}></div>
           <div className={styles.heroInner}>
             <div className={styles.eyebrow}>
-              <span className={styles.dot}></span> Now live for Malawi checkout
+              <span className={styles.dot}></span> Now live for Malawi & Kenya checkout
             </div>
             <h1 className={styles.title}>
               Hostinger payments,<br />
               <span className={styles.accent}>simplified.</span>
             </h1>
             <p className={styles.description}>
-              Hosting purchase on Hostinger using Malawian Kwacha (Mobile Money).
+              Hosting purchase on Hostinger using Malawian Kwacha (MWK) or Kenyan Shillings (KES) via Mobile Money.
             </p>
             <div className={styles.heroCtas}>
               <a href="#tabs" className={styles.btn}>
@@ -29,51 +30,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div className={styles.mockup}>
-              <div className={styles.mockupHeader}>
-                <div className={styles.mockupMerchant}>
-                  <span className={styles.mockupMerchantIcon}>H</span>
-                  <div className={styles.mockupMerchantText}>
-                    <span className={styles.mockupMerchantName}>Hostinger</span>
-                    <span className={styles.mockupOrderId}>Order #HS-88213</span>
-                  </div>
-                </div>
-                <span className={styles.mockupBadge}>Pending</span>
-              </div>
-
-              <div className={styles.mockupDivider}></div>
-
-              <div className={styles.mockupLineItems}>
-                <div className={styles.mockupLineItem}>
-                  <span>Domain Purchase</span>
-                  <span className={styles.mockupLineItemValue}>14,647 MWK</span>
-                </div>
-                <div className={styles.mockupLineItem}>
-                  <span>Network Fee</span>
-                  <span className={styles.mockupLineItemValue}>4650 MWK</span>
-                </div>
-              </div>
-
-              <div className={styles.mockupDivider}></div>
-
-              <div className={styles.mockupTotalRow}>
-                <div className={styles.mockupTotalLeft}>
-                  <span className={styles.mockupTotalLabel}>Total MWK</span>
-                </div>
-                <span className={styles.mockupTotalValue}>19,297 MWK</span>
-              </div>
-
-              <div className={styles.mockupDivider} style={{ borderStyle: 'dashed' }}></div>
-
-              <div className={styles.mockupLineItems} style={{ marginBottom: '16px' }}>
-                <div className={styles.mockupLineItem}>
-                  <span>Mobile Money No.</span>
-                  <span className={styles.mockupLineItemValue}>+265 99 123 4567</span>
-                </div>
-              </div>
-
-              <button className={styles.mockupCta}>Pay 19,297 MWK</button>
-            </div>
+            <HeroMockup />
           </div>
         </section>
 

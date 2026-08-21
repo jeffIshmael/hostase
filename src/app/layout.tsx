@@ -9,7 +9,7 @@ const ibmPlexMono = IBM_Plex_Mono({ weight: "500", subsets: ["latin"], variable:
 
 export const metadata: Metadata = {
   title: "Hostase Extension | Easy Payments",
-  description: "Seamlessly purchase hosting using Malawian Kwacha and instantly complete your Hostinger payments with just your mobile phone number.",
+  description: "Seamlessly purchase hosting using Malawian Kwacha (MWK) or Kenyan Shillings (KES) and instantly complete your Hostinger payments with just your mobile phone number.",
 };
 
 export default function RootLayout({

@@ -181,7 +181,7 @@ export default function TabsSection() {
           <div className={styles.step}>
             <div className={`${styles.stepNum} mono`}>5</div>
             <h4>Pay with Hostase</h4>
-            <p>Open the Hostase extension and paste the copied address. We'll automatically calculate the cost in MWK. Confirm details and <strong>Make Payment</strong>.</p>
+            <p>Open the Hostase extension and paste the copied address. We'll automatically calculate the cost in MWK or KES. Confirm details and <strong>Make Payment</strong>.</p>
              <div className={styles.frame}>
               <div className={styles.frameBar}><span></span><span></span><span></span></div>
               <img src="/images/address.png" alt="Checkout details" className={styles.frameImage} />

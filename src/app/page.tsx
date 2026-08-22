@@ -25,7 +25,7 @@ export default function Home() {
               <a href="#tabs" className={styles.btn}>
                 Install for Chrome / Brave
               </a>
-              <a href="#flow" className={`${styles.btn} ${styles.btnGhost}`}>
+              <a href="#demo" className={`${styles.btn} ${styles.btnGhost}`}>
                 See how it works
               </a>
             </div>
@@ -58,6 +58,22 @@ export default function Home() {
               <h3>Pay with Mobile Money</h3>
               <p>Open the extension, paste the address and click pay. You'll receive a prompt on your phone to instantly confirm the payment.</p>
             </div>
+          </div>
+        </section>
+
+        <section className={styles.demoSection} id="demo">
+          <div className={styles.demoHead}>
+            <h2>Watch the demo</h2>
+            <p>See how Hostase works from checkout to mobile money payment in under two minutes.</p>
+          </div>
+          <div className={styles.videoFrame}>
+            <iframe
+              src="https://www.youtube.com/embed/yAh1Q1F9B0o"
+              title="Hostase demo — pay for Hostinger with mobile money"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
           </div>
         </section>
 

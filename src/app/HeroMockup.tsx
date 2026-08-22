@@ -1,36 +1,58 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 
 type Currency = "MWK" | "KES";
 
-const MWK_PER_USDC = 4651;
-const KES_PER_USDC = 131;
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL ?? "https://chrome-hostinger.vercel.app";
 
-/** Canonical MWK line items (source of truth for conversion). */
-const DOMAIN_MWK = 14647;
-const FEE_MWK = 4650;
+/** Fixed live-style KES rate for the hero mock (matches production executable band). */
+const KES_PER_USDC = 132;
+
+/** Example domain size in USDC — derived from the original MWK mock at ~4651 MWK/USDC. */
+const EXAMPLE_DOMAIN_USDC = 14647 / 4651;
+const FEE_USDC = 1;
+
+const FALLBACK_MWK_PER_USDC = 4651;
 
 const PHONES: Record<Currency, string> = {
   MWK: "+265 99 123 4567",
   KES: "+254 712 345 678",
 };
 
-function toKes(mwk: number): number {
-  return Math.round((mwk / MWK_PER_USDC) * KES_PER_USDC);
-}
-
 function formatAmount(amount: number): string {
   return amount.toLocaleString("en-US");
 }
 
+function lineItemsForRate(rate: number) {
+  const domain = Math.ceil(EXAMPLE_DOMAIN_USDC * rate);
+  const fee = Math.ceil(FEE_USDC * rate);
+  return { domain, fee, total: domain + fee };
+}
+
 export default function HeroMockup() {
   const [currency, setCurrency] = useState<Currency>("MWK");
+  const [mwkPerUsdc, setMwkPerUsdc] = useState(FALLBACK_MWK_PER_USDC);
 
-  const domain = currency === "MWK" ? DOMAIN_MWK : toKes(DOMAIN_MWK);
-  const fee = currency === "MWK" ? FEE_MWK : toKes(FEE_MWK);
-  const total = domain + fee;
+  useEffect(() => {
+    fetch(`${API_URL}/rate?currency=MWK&t=${Date.now()}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (typeof data.rate === "number" && data.rate > 0) {
+          setMwkPerUsdc(data.rate);
+        }
+      })
+      .catch(() => {
+        /* keep fallback */
+      });
+  }, []);
+
+  const { domain, fee, total } =
+    currency === "MWK"
+      ? lineItemsForRate(mwkPerUsdc)
+      : lineItemsForRate(KES_PER_USDC);
 
   return (
     <div className={styles.mockupStage}>

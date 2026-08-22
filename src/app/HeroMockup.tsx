@@ -1,21 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./page.module.css";
 
 type Currency = "MWK" | "KES";
 
-const API_URL =
-  process.env.NEXT_PUBLIC_API_URL ?? "https://chrome-hostinger.vercel.app";
-
-/** Fixed live-style KES rate for the hero mock (matches production executable band). */
+/** Hardcoded from live API rates (chrome-hostinger.vercel.app/rate). */
+const MWK_PER_USDC = 4650;
 const KES_PER_USDC = 132;
 
 /** Example domain size in USDC — derived from the original MWK mock at ~4651 MWK/USDC. */
 const EXAMPLE_DOMAIN_USDC = 14647 / 4651;
 const FEE_USDC = 1;
-
-const FALLBACK_MWK_PER_USDC = 4651;
 
 const PHONES: Record<Currency, string> = {
   MWK: "+265 99 123 4567",
@@ -34,25 +30,9 @@ function lineItemsForRate(rate: number) {
 
 export default function HeroMockup() {
   const [currency, setCurrency] = useState<Currency>("MWK");
-  const [mwkPerUsdc, setMwkPerUsdc] = useState(FALLBACK_MWK_PER_USDC);
 
-  useEffect(() => {
-    fetch(`${API_URL}/rate?currency=MWK&t=${Date.now()}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (typeof data.rate === "number" && data.rate > 0) {
-          setMwkPerUsdc(data.rate);
-        }
-      })
-      .catch(() => {
-        /* keep fallback */
-      });
-  }, []);
-
-  const { domain, fee, total } =
-    currency === "MWK"
-      ? lineItemsForRate(mwkPerUsdc)
-      : lineItemsForRate(KES_PER_USDC);
+  const rate = currency === "MWK" ? MWK_PER_USDC : KES_PER_USDC;
+  const { domain, fee, total } = lineItemsForRate(rate);
 
   return (
     <div className={styles.mockupStage}>

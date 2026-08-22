@@ -5,9 +5,9 @@ import styles from "./page.module.css";
 
 type Currency = "MWK" | "KES";
 
-/** Hardcoded from live API rates (chrome-hostinger.vercel.app/rate). */
-const MWK_PER_USDC = 4650;
-const KES_PER_USDC = 132;
+/** ElementPay locked quote rates for the hero example (rounded up like KES 132 ← ~131.64). */
+const MWK_PER_USDC = 4650; // locked quote rate (MWK), fetched from ElementPay
+const KES_PER_USDC = 132; // locked quote rate (KES), ~131.64 rounded up
 
 /** Example domain size in USDC — derived from the original MWK mock at ~4651 MWK/USDC. */
 const EXAMPLE_DOMAIN_USDC = 14647 / 4651;

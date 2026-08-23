@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { track } from "@vercel/analytics";
 import { sendGAEvent } from "@next/third-parties/google";
+import { trackEvent } from "@/lib/analytics";
 import { Download, Copy, Check } from "lucide-react";
 import styles from "./page.module.css";
 
@@ -75,6 +76,7 @@ export default function TabsSection() {
               onClick={() => {
                 track("download_extension");
                 sendGAEvent({ event: "download_extension", value: "hostase-extension.zip" });
+                trackEvent("download", { file: "hostase-extension.zip" });
               }}
             >
               <Download size={16} />

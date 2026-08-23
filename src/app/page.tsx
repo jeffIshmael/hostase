@@ -2,6 +2,8 @@ import styles from "./page.module.css";
 import TabsSection from "./TabsSection";
 import Header from "./Header";
 import HeroMockup from "./HeroMockup";
+import HeroCtas from "./HeroCtas";
+import DemoSection from "./DemoSection";
 
 export default function Home() {
   return (
@@ -21,14 +23,7 @@ export default function Home() {
             <p className={styles.description}>
               Hosting purchase on Hostinger using Malawian Kwacha (MWK) or Kenyan Shillings (KES) via Mobile Money.
             </p>
-            <div className={styles.heroCtas}>
-              <a href="#tabs" className={styles.btn}>
-                Install for Chrome / Brave
-              </a>
-              <a href="#demo" className={`${styles.btn} ${styles.btnGhost}`}>
-                See how it works
-              </a>
-            </div>
+            <HeroCtas />
 
             <HeroMockup />
           </div>
@@ -61,21 +56,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.demoSection} id="demo">
-          <div className={styles.demoHead}>
-            <h2>Watch the demo</h2>
-            <p>See how Hostase works from checkout to mobile money payment in under two minutes.</p>
-          </div>
-          <div className={styles.videoFrame}>
-            <iframe
-              src="https://www.youtube.com/embed/yAh1Q1F9B0o"
-              title="Hostase demo — pay for Hostinger with mobile money"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
-          </div>
-        </section>
+        <DemoSection />
 
         <TabsSection />
 

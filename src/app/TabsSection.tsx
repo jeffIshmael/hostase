@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { track } from "@vercel/analytics";
-import { sendGAEvent } from "@next/third-parties/google";
-import { trackEvent } from "@/lib/analytics";
+import { hasSubmittedLead } from "@/lib/analytics";
 import { Download, Copy, Check } from "lucide-react";
+import DownloadLeadModal from "./DownloadLeadModal";
 import styles from "./page.module.css";
 
 function CopyableCode({ text }: { text: string }) {
@@ -41,9 +40,25 @@ function CopyableCode({ text }: { text: string }) {
 
 export default function TabsSection() {
   const [activeTab, setActiveTab] = useState<0 | 1>(0);
+  const [leadOpen, setLeadOpen] = useState(false);
+  const [modalPhase, setModalPhase] = useState<"form" | "downloading">("form");
+
+  function handleDownloadButtonClick() {
+    if (hasSubmittedLead()) {
+      setModalPhase("downloading");
+    } else {
+      setModalPhase("form");
+    }
+    setLeadOpen(true);
+  }
 
   return (
     <section className={styles.tabsSection} id="tabs">
+      <DownloadLeadModal
+        open={leadOpen}
+        initialPhase={modalPhase}
+        onClose={() => setLeadOpen(false)}
+      />
       <div className={styles.tabTrack}>
         <button
           className={`${styles.tabBtn} ${activeTab === 0 ? styles.tabBtnActive : ""}`}
@@ -69,19 +84,10 @@ export default function TabsSection() {
             <div className={`${styles.stepNum} mono`}>1</div>
             <h4>Download the extension</h4>
             <p>Grab the latest build from the release page.</p>
-            <a 
-              href="/hostase-extension.zip" 
-              download 
-              className={styles.downloadBtn}
-              onClick={() => {
-                track("download_extension");
-                sendGAEvent({ event: "download_extension", value: "hostase-extension.zip" });
-                trackEvent("download", { file: "hostase-extension.zip" });
-              }}
-            >
+            <button type="button" className={styles.downloadBtn} onClick={handleDownloadButtonClick}>
               <Download size={16} />
               <span>Download .zip Folder</span>
-            </a>
+            </button>
           </div>
           <div className={styles.step}>
             <div className={`${styles.stepNum} mono`}>2</div>

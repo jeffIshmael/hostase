@@ -2,7 +2,51 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://chrome-hostinger.ver
 const SESSION_COOKIE = "hostase_sid";
 const SESSION_MAX_AGE_DAYS = 30;
 
-export type AnalyticsEventType = "page_view" | "download" | "demo_view" | "cta_click";
+export type AnalyticsEventType = "page_view" | "download" | "demo_view" | "cta_click" | "lead_submit";
+
+const LEAD_DONE_KEY = "hostase_lead_done";
+
+export function hasSubmittedLead(): boolean {
+  if (typeof window === "undefined") return false;
+  return localStorage.getItem(LEAD_DONE_KEY) === "1";
+}
+
+export function markLeadSubmitted() {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(LEAD_DONE_KEY, "1");
+}
+
+export async function submitLead(input: {
+  email: string;
+  phone: string;
+  country_code: string;
+}): Promise<{ ok: boolean; error?: string }> {
+  const session_id = getOrCreateSessionId();
+  const utm = parseUtmParams();
+  try {
+    const res = await fetch(`${API_URL}/analytics/lead`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        session_id,
+        email: input.email,
+        phone: input.phone,
+        country_code: input.country_code,
+        path: typeof window !== "undefined" ? window.location.pathname : "/",
+        source: "landing_download",
+        ...utm,
+      }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      return { ok: false, error: data.error || "Could not save your details. Please try again." };
+    }
+    markLeadSubmitted();
+    return { ok: true };
+  } catch {
+    return { ok: false, error: "Could not reach the server. Please try again." };
+  }
+}
 
 function readCookie(name: string): string | null {
   if (typeof document === "undefined") return null;

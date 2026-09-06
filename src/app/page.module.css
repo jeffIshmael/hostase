@@ -847,10 +847,13 @@
   padding: 8px 16px;
   background: var(--blue-500);
   color: #fff;
+  border: none;
   border-radius: 8px;
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
   transition: background 0.2s;
 }
 
@@ -1031,4 +1034,211 @@
   .originRing {
     animation: none !important;
   }
+}
+
+/* Download lead capture modal */
+.leadOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.leadModal {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px 24px;
+  box-shadow: 0 24px 48px -16px rgba(15, 23, 42, 0.35);
+}
+
+.leadClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: none;
+  background: #f1f5f9;
+  color: #475569;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.leadModal h3 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  color: var(--ink-900);
+  padding-right: 28px;
+}
+
+.leadCopy {
+  margin: 0 0 20px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--slate-600);
+}
+
+.leadForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.leadLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.leadInput,
+.leadSelect {
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--ink-900);
+  background: #fff;
+}
+
+.leadPhoneRow {
+  display: flex;
+  gap: 8px;
+}
+
+.leadSelect {
+  width: 118px;
+  flex-shrink: 0;
+}
+
+.leadPhoneRow .leadInput {
+  flex: 1;
+}
+
+.leadError {
+  margin: 0;
+  color: #dc2626;
+  font-size: 0.85rem;
+}
+
+.leadSuccess {
+  text-align: center;
+}
+
+.leadSuccessIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #d1fae5;
+  color: #065f46;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.leadSuccess h3 {
+  padding-right: 0;
+}
+
+.leadSuccess p {
+  margin: 0 0 20px;
+  color: var(--slate-600);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.leadSuccess .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.leadStatus {
+  text-align: center;
+  padding-top: 8px;
+}
+
+.leadStatus h3 {
+  padding-right: 0;
+}
+
+.leadSpinner {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 18px;
+  border-radius: 999px;
+  border: 3px solid #e2e8f0;
+  border-top-color: var(--blue-500);
+  animation: leadSpin 0.8s linear infinite;
+}
+
+.leadProgressTrack {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  overflow: hidden;
+  margin: 4px 0 10px;
+}
+
+.leadProgressFill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--blue-500), var(--blue-600));
+  transition: width 0.2s ease;
+}
+
+.leadProgressFillIndeterminate {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--blue-500), var(--blue-600));
+  animation: leadIndeterminate 1.2s ease-in-out infinite;
+}
+
+.leadProgressLabel {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--slate-500);
+  font-variant-numeric: tabular-nums;
+}
+
+.leadErrorIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #fee2e2;
+  color: #b91c1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 14px;
+}
+
+@keyframes leadSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes leadIndeterminate {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(280%); }
 }

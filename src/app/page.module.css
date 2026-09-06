@@ -1124,6 +1124,19 @@
   flex-shrink: 0;
 }
 
+.leadSelectWide {
+  width: 170px;
+  flex-shrink: 0;
+  padding: 11px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--ink-900);
+  background: #fff;
+  max-width: 45%;
+}
+
 .leadPhoneRow .leadInput {
   flex: 1;
 }

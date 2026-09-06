@@ -6,6 +6,7 @@ import { track } from "@vercel/analytics";
 import { sendGAEvent } from "@next/third-parties/google";
 import { submitLead, trackEvent } from "@/lib/analytics";
 import { downloadExtensionZip } from "@/lib/downloadExtension";
+import { trackMeta } from "@/lib/metaPixel";
 import styles from "./page.module.css";
 
 type Phase = "form" | "downloading" | "success" | "error";
@@ -106,6 +107,7 @@ export default function DownloadLeadModal({ open, initialPhase = "form", onClose
     sendGAEvent({ event: "download_extension", value: "hostase-extension.zip" });
     await trackEvent("download", { file: "hostase-extension.zip" });
     await downloadExtensionZip((pct) => setProgress(pct));
+    trackMeta("ExtensionDownload", { content_name: "hostase-extension.zip" });
   }
 
   async function handleSubmit(e: FormEvent) {
@@ -128,6 +130,7 @@ export default function DownloadLeadModal({ open, initialPhase = "form", onClose
       return;
     }
 
+    trackMeta("Lead", { content_name: "extension_download" });
     setSubmitting(false);
     setPhase("downloading");
 

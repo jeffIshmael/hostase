@@ -130,7 +130,6 @@ export default function DownloadLeadModal({ open, initialPhase = "form", onClose
       return;
     }
 
-    trackMeta("Lead", { content_name: "extension_download" });
     setSubmitting(false);
     setPhase("downloading");
 
